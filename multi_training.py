@@ -31,6 +31,9 @@ def loadPieces(dirpath):
         count += 1
         print count
 
+        if count > 650:
+            break
+
     return pieces
 
 def getPieceSegment(pieces):
