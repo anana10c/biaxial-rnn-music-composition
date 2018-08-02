@@ -28,6 +28,7 @@ def loadPieces(dirpath):
 
         pieces[name] = outMatrix
         print "Loaded {}".format(name)
+        count += 1
         print count
 
     return pieces
