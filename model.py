@@ -97,12 +97,17 @@ class Model(object):
         
         self.dropout = dropout
 
+        print "benchmark 1"
+        
         self.conservativity = T.fscalar()
         self.srng = T.shared_randomstreams.RandomStreams(np.random.randint(0, 1024))
 
         self.setup_train()
+        print "train setup"
         self.setup_predict()
+        print "predict setup"
         self.setup_slow_walk()
+        print "slow walk setup"
 
     @property
     def params(self):
