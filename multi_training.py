@@ -12,6 +12,7 @@ division_len = 16 # interval between possible start locations
 def loadPieces(dirpath):
 
     pieces = {}
+    count = 0
 
     for fname in os.listdir(dirpath):
         if fname[-4:] not in ('.mid','.MID'):
@@ -27,6 +28,7 @@ def loadPieces(dirpath):
 
         pieces[name] = outMatrix
         print "Loaded {}".format(name)
+        print count
 
     return pieces
 
