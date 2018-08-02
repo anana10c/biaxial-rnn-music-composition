@@ -31,7 +31,7 @@ def loadPieces(dirpath):
         count += 1
         print count
 
-        if count > 400:
+        if count > 300:
             break
 
     return pieces
