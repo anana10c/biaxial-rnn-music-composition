@@ -17,6 +17,8 @@ def loadPieces(dirpath):
         if fname[-4:] not in ('.mid','.MID'):
             continue
 
+        print "loading {}".format(fname)
+        
         name = fname[:-4]
 
         outMatrix = midiToNoteStateMatrix(os.path.join(dirpath, fname))
