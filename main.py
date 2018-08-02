@@ -39,10 +39,10 @@ def fetch_train_thoughts(m,pcs,batches,name="trainthoughts"):
 
 if __name__ == '__main__':
 
-	pcs = multi_training.loadPieces("music")
-
-	m = model.Model([300,300],[100,50], dropout=0.5)
-
-	multi_training.trainPiece(m, pcs, 10000)
-
+	pcs = multi_training.loadPieces("tetris")
+	print "pieces loaded"
+	m = model.Model([100,100],[30,15], dropout=0.5)
+	print "model created"
+	multi_training.trainPiece(m, pcs, 1000)
+	print "training complete"
 	pickle.dump( m.learned_config, open( "output/final_learned_config.p", "wb" ) )
