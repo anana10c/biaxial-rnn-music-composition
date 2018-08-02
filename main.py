@@ -42,6 +42,7 @@ if __name__ == '__main__':
 	pcs = multi_training.loadPieces("gameboy-music")
 	print "pieces loaded"
 	m = model.Model([100,100],[30,15], dropout=0.5)
+	m.learned_config = pickle.load(open( "output/params500.p", "rb" ) )
 	print "model created"
 	multi_training.trainPiece(m, pcs, 1000)
 	print "training complete"
@@ -49,16 +50,12 @@ if __name__ == '__main__':
 
 #if __name__ == '__main__':
 def generate_pieces():
-        pcs = multi_training.loadPieces("tetris")
+        pcs = multi_training.loadPieces("gameboy-music")
         print "pieces loaded"
         m = model.Model([100,100],[30,15], dropout=0.5)
         print "model created"
         m.learned_config = pickle.load(open( "output/final_learned_config.p", "rb" ) )
         print "params loaded"
-        gen_adaptive(m,pcs,10,name="composition1")
-        print "first piece generated"
-        
-        pcs = multi_training.loadPieces("gameboy-music")
-        print "pieces loaded"
-        gen_adaptive(m,pcs,10,name="composition2")
-        print "second piece generated"
+        for i in xrange(5):
+                gen_adaptive(m,pcs,10,name="composition"+str(i))
+                print "piece {} generated".format(i)

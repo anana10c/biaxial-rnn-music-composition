@@ -101,7 +101,8 @@ class Model(object):
         
         self.conservativity = T.fscalar()
         self.srng = T.shared_randomstreams.RandomStreams(np.random.randint(0, 1024))
-
+        print "benchmark 2"
+        
         self.setup_train()
         print "train setup"
         self.setup_predict()
