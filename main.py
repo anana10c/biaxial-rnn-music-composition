@@ -39,9 +39,9 @@ def fetch_train_thoughts(m,pcs,batches,name="trainthoughts"):
 
 if __name__ == '__main__':
 
-	pcs = multi_training.loadPieces("tetris")
+	pcs = multi_training.loadPieces("gameboy-music")
 	print "pieces loaded"
-	m = model.Model([100,100],[30,15], dropout=0.5)
+	m = model.Model([100,100],[50,25], dropout=0.5)
 	print "model created"
 	multi_training.trainPiece(m, pcs, 1000)
 	print "training complete"
