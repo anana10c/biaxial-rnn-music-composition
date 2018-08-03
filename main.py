@@ -41,7 +41,7 @@ if __name__ == '__main__':
 	pcs = multi_training.loadPieces("selected-gameboy") #tetris and pokemon
 	print "pieces loaded"
 	m = model.Model([100,100],[30,15], dropout=0.5)
-	#m.learned_config = pickle.load(open( "start-poketris.p", "rb" ) )
+	m.learned_config = pickle.load(open( "start-poketris.p", "rb" ) )
 	print "model created"
 	multi_training.trainPiece(m, pcs, 2000)
 	print "training complete"
