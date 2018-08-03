@@ -62,7 +62,7 @@ def trainPiece(model,pieces,epochs,start=0):
         error = model.update_fun(*getPieceBatch(pieces))
         if i % 10 == 0:
             print "epoch {}, error={}".format(i,error)
-        if i % 100 == 0 or (i % 100 == 0 and i < 1000):
+        if i % 50 == 0 or (i % 100 == 0 and i < 1000):
             xIpt, xOpt = map(numpy.array, getPieceSegment(pieces))
             noteStateMatrixToMidi(numpy.concatenate((numpy.expand_dims(xOpt[0], 0), model.predict_fun(batch_len, 1, xIpt[0])), axis=0),'output/sample{}'.format(i))
             pickle.dump(model.learned_config,open('output/params{}.p'.format(i), 'wb'))
