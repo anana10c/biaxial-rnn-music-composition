@@ -38,12 +38,12 @@ def fetch_train_thoughts(m,pcs,batches,name="trainthoughts"):
 	pickle.dump(all_thoughts, open('output/'+name+'.p','wb'))
 
 if __name__ == '__main__':
-	pcs = multi_training.loadPieces("selected-gameboy") #tetris and pokemon
+	pcs = multi_training.loadPieces("gameboy-music") #tetris and pokemon
 	print "pieces loaded"
 	m = model.Model([100,100],[30,15], dropout=0.5)
-	m.learned_config = pickle.load(open( "params800.p", "rb" ) )
+	m.learned_config = pickle.load(open( "gameboyx3.p", "rb" ) )
 	print "model created"
-	multi_training.trainPiece(m, pcs, 1200)
+	multi_training.trainPiece(m, pcs, 2000)
 	print "training complete"
 	pickle.dump( m.learned_config, open( "output/final_learned_config.p", "wb" ) )
 
