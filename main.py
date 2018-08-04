@@ -52,9 +52,9 @@ if __name__ == '__main__':
         print "pieces loaded"
         m = model.Model([100,100],[30,15], dropout=0.5)
         print "model created"
-        m.learned_config = pickle.load(open( "gameboy4.p", "rb" ) )
+        m.learned_config = pickle.load(open( "gameboyx3.p", "rb" ) )
         print "params loaded"
-        for i in xrange(2):
+        for i in xrange(5):
                 gen_adaptive(m,pcs,10,name="composition"+str(i))
                 print "piece {} generated".format(i)
 
